@@ -6,6 +6,7 @@ import Pagination from './components/Pagination';
 import SearchEngine from './components/SearchEngine';
 import Loading from './components/Loading';
 import Error from './components/Error';
+import FavouriteBooksList from './components/FavouriteBooksList';
 
 function App() {
   const [data, setData] = useState(null);
@@ -14,6 +15,7 @@ function App() {
   const [url, setUrl] = useState('https://gnikdroy.pythonanywhere.com/api/book/?format=json&page=1')
   const [currentPage, setCurrentPage] = useState(1);
   const [searchText, setSearchText] = useState('');
+  const [favList, setFavList] = useState(true);
 
   const getData = async (url) => {
     try {
@@ -60,14 +62,15 @@ function App() {
   return (
     <div className='container'>
       <SearchEngine  onClick= {searchBooks}/>
-      {loading && <Loading />}
-      {error && <Error err = {error} />}
-      {data && (
+      {(loading && !favList) && <Loading />}
+      {(error && !favList) && <Error err = {error} />}
+      {(data && !favList) && (
       <>       
         <BookList data = {data} />
         <Pagination total = {data.count} currentPage = {currentPage} onClick = {changeHandle}/>
       </>
-      )}    
+      )}  
+      {favList && <FavouriteBooksList />}  
     </div>
   );
 }
