@@ -13,7 +13,7 @@ function AddToFav(props) {
 
 
         const bookText = props.data.resources.map( (res) => {          
-                if(res.uri.includes('.txt')) {
+                if(res.uri.includes('.htm')) {
                     return res.uri;
                 }
             }).join("");

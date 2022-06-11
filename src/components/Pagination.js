@@ -6,7 +6,21 @@ function Pagination(props) {
     const minPageLimit = 1;
     let pagination = '';
 
-    if(currentPage > minPageLimit && currentPage < maxPageLimit){
+    if (maxPageLimit == 1) {
+      pagination = (<>
+        <li className='page-item active'><a className='page-link' href='#' onClick={() => props.onClick(currentPage - 2)}>{currentPage}</a></li>
+      </>)
+    } else if (maxPageLimit == 2 && currentPage === maxPageLimit) {
+      pagination = (<>
+        <li className='page-item'><a className='page-link' href='#' onClick={() => props.onClick(currentPage - 2)}>{currentPage - 1}</a></li>
+        <li className='page-item active'><a className='page-link' href='#'onClick={() => props.onClick(currentPage - 1)}>{currentPage}</a></li>
+      </>) 
+    } else if (maxPageLimit == 2 && currentPage === minPageLimit) {
+      pagination = (<>
+        <li className='page-item active'><a className='page-link' href='#' onClick={() => props.onClick(currentPage - 2)}>{currentPage}</a></li>
+        <li className='page-item'><a className='page-link' href='#'onClick={() => props.onClick(currentPage - 1)}>{currentPage + 1}</a></li>
+      </>)
+    } else if(currentPage > minPageLimit && currentPage < maxPageLimit){
       pagination = (<>
         <li className='page-item'><a className='page-link' href='#' onClick={() => props.onClick(currentPage - 1)}>{currentPage - 1}</a></li>
         <li className='page-item active' aria-current="page"><a className='page-link' href='#' onClick={() => props.onClick(currentPage)}>{currentPage}</a></li>
@@ -22,7 +36,7 @@ function Pagination(props) {
       pagination = (<>
         <li className='page-item'><a className='page-link' href='#' onClick={() => props.onClick(currentPage - 2)}>{currentPage - 2}</a></li>
         <li className='page-item'><a className='page-link' href='#'onClick={() => props.onClick(currentPage - 1)}>{currentPage - 1}</a></li>
-        <li className='page-item  active' aria-current="page"><a className='page-link' href='#' onClick={() => props.onClick(currentPage)}>{currentPage}</a></li>
+        <li className='page-item active' aria-current="page"><a className='page-link' href='#' onClick={() => props.onClick(currentPage)}>{currentPage}</a></li>
       </>) 
     }
 

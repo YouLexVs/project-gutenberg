@@ -28,6 +28,14 @@
   color: #61dafb;
 }
 
+.d-flex.justify-content-start.search-bar {
+  width: 50%;
+}
+
+.card.mb-3.shadow-sm.bg-white.rounded:hover {
+  cursor: pointer;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
