@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/project-gutenberg/static/css/main.a5d11407.css",
+    "main.js": "/project-gutenberg/static/js/main.33c1b7eb.js",
+    "static/js/787.5fb87b20.chunk.js": "/project-gutenberg/static/js/787.5fb87b20.chunk.js",
+    "index.html": "/project-gutenberg/index.html",
+    "main.a5d11407.css.map": "/project-gutenberg/static/css/main.a5d11407.css.map",
+    "main.33c1b7eb.js.map": "/project-gutenberg/static/js/main.33c1b7eb.js.map",
+    "787.5fb87b20.chunk.js.map": "/project-gutenberg/static/js/787.5fb87b20.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5d11407.css",
+    "static/js/main.33c1b7eb.js"
+  ]
+}
